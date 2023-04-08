@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>guru.springframework</groupId>
+    <artifactId>spring-6-image-object-detection</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-6-rest-mvc</name>
+    <description>Demo project for Spring REST </description>
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <djl.version>0.22.0-SNAPSHOT</djl.version>
+    </properties>
+    <repositories>
+        <repository>
+            <id>djl.ai</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ai.djl</groupId>
+                <artifactId>bom</artifactId>
+                <version>${djl.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl</groupId>
+            <artifactId>api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl</groupId>
+            <artifactId>basicdataset</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl</groupId>
+            <artifactId>model-zoo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl.timeseries</groupId>
+            <artifactId>timeseries</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl.huggingface</groupId>
+            <artifactId>tokenizers</artifactId>
+        </dependency>
+        <!-- MXNet -->
+        <dependency>
+            <groupId>ai.djl.mxnet</groupId>
+            <artifactId>mxnet-model-zoo</artifactId>
+        </dependency>
+        <!-- Pytorch -->
+        <!--
+        <dependency>
+            <groupId>ai.djl.pytorch</groupId>
+            <artifactId>pytorch-model-zoo</artifactId>
+        </dependency>
+        -->
+        <!-- TensorFlow -->
+        <!--
+        <dependency>
+            <groupId>ai.djl.tensorflow</groupId>
+            <artifactId>tensorflow-model-zoo</artifactId>
+        </dependency>
+        -->
+        <!-- ONNXRuntime -->
+        <!--
+        <dependency>
+            <groupId>ai.djl.onnxruntime</groupId>
+            <artifactId>onnxruntime-engine</artifactId>
+        </dependency>
+        -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.project-lombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
